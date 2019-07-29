@@ -1,0 +1,55 @@
+
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User.name.cardnum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-control" disabled><strong>{$row.user.name} / {$row.user.cardnum}</strong></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Serviceitems')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-control" disabled>{$row.service_items.servicename}</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Adminname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-control" disabled>{$artificer.name}</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Createtime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-control" disabled>{:date('Y-m-d H:i:s',$row.createtime)}</div>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-content" data-rule="required"  placeholder="请认真填写客勤，帮助我们了解客户，300字内"  class="form-control" name="row[content]" type="text" rows="5">{$artificer.customer_log.content}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Remarks')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-remarks" placeholder="如：下次对该客户如何销售项目"  class="form-control" name="row[remarks]" type="text" rows="3">{$artificer.customer_log.remarks}</textarea>
+            <input type="hidden" name="id" value="{$artificer.customer_log.id}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Serviceedit')}：</label>
+        <div class="col-xs-12 col-sm-8 margin-top8 color-gray">
+            <span>{$artificer.customer_log.lasteditadmin} {$artificer.customer_log.lasteditetime?'/'.date('Y-m-d H:m:s',$artificer.customer_log.lasteditetime):''}</span>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,147 @@
+<style>
+    .table-marggin {
+        margin-top: 15px;
+        padding: 5px;;
+    }
+
+    .td-title {
+        width: 20%
+    }
+
+    .bs-callout + .bs-callout {
+        margin-top: -5px;
+    }
+
+    .bs-callout-danger {
+        border-left-color: #ce4844;
+    }
+    .font-16{
+        font-size: 16px
+    }
+    .margin-lr8{
+        margin: 0 8px;
+    }
+    .bs-callout {
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #eee;
+        border-left-width: 5px;
+        border-radius: 3px;
+    }
+.form-group{ line-height: 28px}
+</style>
+<div class="panel panel-default panel-intro">
+    <div class="bs-callout ">
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Health')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                {if condition="empty($extendInfo.health)"}
+                <a href="user/user/edit/ids/{$baseInfo.id}/item/1"  class="btn-dialog color-danger">{:__('add')}</a>
+                {else /}
+                <span>{$extendInfo.health}</span>
+                <span class="color-gray margin-lr8">{$extendInfo.health_lastendauthor} / {$extendInfo.health_lastendtime|date="Y-m-d H:m:s",###} </span>
+                <a href="user/user/edit/ids/{$baseInfo.id}"  class="btn-dialog">{:__('Edit')}</a>
+                {/if}
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Family')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                {if condition="empty($extendInfo.family)"}
+                <a href="user/user/edit/ids/{$baseInfo.id}/item/2"  class="btn-dialog color-danger">{:__('add')}</a>
+                {else /}
+                <span>{$extendInfo.family}</span>
+                <span class="color-gray margin-lr8">{$extendInfo.family_lastendauthor} / {$extendInfo.family_lastendtime|date="Y-m-d H:m:s",###} </span>
+                <a href="user/user/edit/ids/{$baseInfo.id}"  class="btn-dialog">{:__('Edit')}</a>
+                {/if}
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Income')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                {if condition="empty($extendInfo.income)"}
+                <a href="user/user/edit/ids/{$baseInfo.id}/item/3"  class="btn-dialog color-danger"><strong>{:__('add')}</strong></a>
+                {else /}
+                <span>{$extendInfo.income}</span>
+                <span class="color-gray margin-lr8">{$extendInfo.income_lastendauthor} / {$extendInfo.income_lastendtime} </span>
+                <a href="user/user/edit/ids/{$baseInfo.id}"  class="btn-dialog">{:__('Edit')}</a>
+                {/if}
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Ability')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                {if condition="empty($extendInfo.ability)"}
+                <a href="user/user/edit/ids/{$baseInfo.id}/item/4"  class="btn-dialog color-danger"><strong>{:__('add')}</strong></a>
+                {else /}
+                <span>{$extendInfo.ability}</span>
+                <span class="color-gray margin-lr8">{$extendInfo.ability_lastendauthor} / {$extendInfo.ability_lastendtime|date="Y-m-d H:m:s",###} </span>
+                <a href="user/user/edit/ids/{$baseInfo.id}"  class="btn-dialog">{:__('Edit')}</a>
+                {/if}
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Likes')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                {if condition="empty($extendInfo.likes)"}
+                <a href="user/user/edit/ids/{$baseInfo.id}/item/5"  class="btn-dialog color-danger"><strong>{:__('add')}</strong></a>
+                {else /}
+                <span>{$extendInfo.likes}</span>
+                <span class="color-gray margin-lr8">{$extendInfo.likes_lastendauthor} / {$extendInfo.likes_lastendtime|date="Y-m-d H:m:s",###} </span>
+                <a href="user/user/edit/ids/{$baseInfo.id}"  class="btn-dialog">{:__('Edit')}</a>
+                {/if}
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Character')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                {if condition="empty($extendInfo.character)"}
+                <a href="user/user/edit/ids/{$baseInfo.id}/item/6"  class="btn-dialog color-danger"><strong>{:__('add')}</strong></a>
+                {else /}
+                <span>{$extendInfo.character}</span>
+                <span class="color-gray margin-lr8">{$extendInfo.character_lastendauthor} / {$extendInfo.character_lastendtime|date="Y-m-d H:m:s",###} </span>
+                <a href="user/user/edit/ids/{$baseInfo.id}"  class="btn-dialog">{:__('Edit')}</a>
+                {/if}
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Needs')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                {if condition="empty($extendInfo.needs)"}
+                <a href="user/user/edit/ids/{$baseInfo.id}/item/7"  class="btn-dialog color-danger"><strong>{:__('add')}</strong></a>
+                {else /}
+                <span>{$extendInfo.needs}</span>
+                <span class="color-gray margin-lr8">{$extendInfo.needs_lastendauthor} / {$extendInfo.needs_lastendtime|date="Y-m-d H:m:s",###} </span>
+                <a href="user/user/edit/ids/{$baseInfo.id}"  class="btn-dialog">{:__('Edit')}</a>
+                {/if}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <a href="javascript:;" id="refresh" class="btn btn-primary  btn-embossed btn-refresh"><i class="fa fa-refresh"> 刷新</i></a>
+            <a href="user/user/edit/ids/{$baseInfo.id}" id="edit" class="btn btn-success btn-embossed btn-dialog">{:__('Edit')}</a>
+            <span class="color-danger"> *编辑后需要刷新该页面，才显示最新数据</span>
+        </div>
+    </div>
+</div>
+<!-- jQuery -->
+<script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+<script>
+    $(function () {
+        $("#refresh").on("click", function () {
+            window.location.reload();
+        });
+
+    });
+</script>
+

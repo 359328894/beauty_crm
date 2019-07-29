@@ -1,0 +1,129 @@
+<style>
+    .table-marggin {
+        margin-top: 15px;
+        padding: 5px;;
+    }
+
+    .td-title {
+        width: 20%
+    }
+
+    .color-primary {
+        color: #337ab7;
+    }
+
+    .color-success {
+        color: #5cb85c;
+    }
+
+    .color-info {
+        color: #5bc0de;
+    }
+
+    .color-warning {
+        color: #5bc0de;
+    }
+
+    .color-warning {
+        color: #f0ad4e;
+    }
+
+    .color-danger {
+        color: #d9534f;
+    }
+
+    .color-gray {
+        color: #666;
+    }
+
+    .bs-callout + .bs-callout {
+        margin-top: -5px;
+    }
+
+    .bs-callout-danger {
+        border-left-color: #ce4844;
+    }
+
+    .bs-callout {
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #eee;
+        border-left-width: 5px;
+        border-radius: 3px;
+    }
+</style>
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        <p>客户项目详情</p>
+    </div>
+    <div class="bs-callout ">
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Cardnum')}:</label>
+            <div class="col-xs-12 col-sm-8"><span class="color-danger"><strong>{$row.user.cardnum}</strong></span></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('User.name')}：</label>
+            <div class="col-xs-12 col-sm-8"><strong>{$row.user.name}</strong><span class="color-gray"> ({$row.user.mobile} ) </span></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Servicename')}：</label>
+            <div class="col-xs-12 col-sm-8"><strong>{$row.servicename}</strong></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Identifier')}:</label>
+            <div class="col-xs-12 col-sm-8"><strong>{$row.identifier}</strong></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Adminname')}：</label>
+            <div class="col-xs-12 col-sm-8">{$row.adminname}</div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Status')}：</label>
+            <div class="col-xs-12 col-sm-8">{eq name="row.status" value="ongoing"}<span class="label label-info">进行中..</span>{else/}<span class="label label-default">已结束</span>{/eq}</div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Totalnumber')}：</label>
+            <div class="col-xs-12 col-sm-8"><strong >{$row.totalnumber} /次</strong></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Specificnumbe')}：</label>
+            <div class="col-xs-12 col-sm-8"><strong >{$row.specificnumbe} /次</strong></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Createtime')}：</label>
+            <div class="col-xs-12 col-sm-8">{$row.createtime|date="Y-m-d H:m:s",###}</div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Lastservicetime')}：</label>
+            <div class="col-xs-12 col-sm-8">{$row.lastservicetime|date="Y-m-d H:m:s",###}</div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Store.storename')}：</label>
+            <div class="col-xs-12 col-sm-8"><strong>{$row.store.storename}</strong></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Remarks')}：</label>
+            <div class="col-xs-12 col-sm-8">{$row.remarks}</div>
+        </div>
+
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <!--<button type="button" id="edit" class="btn btn-success btn-embossed">{:__('Edit')}</button>-->
+            <button type="button" id="close" class="btn btn-default btn-embossed">{:__('Close')}</button>
+
+        </div>
+    </div>
+</div>
+<!-- jQuery -->
+<script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+<script>
+
+    $(function () {
+        $("#close").on("click", function () {
+            var mylay = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(mylay); //关闭弹窗
+        });
+    });
+</script>

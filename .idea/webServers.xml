@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="99094379-c3b5-4b16-91ca-2580a6132fe2" name="fastadmin" url="http://39.105.165.10">
+        <fileTransfer host="39.105.165.10" port="21">
+          <advancedOptions>
+            <advancedOptions controlEncoding="gbk" dataProtectionLevel="Private" passiveMode="true" showHiddenFiles="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

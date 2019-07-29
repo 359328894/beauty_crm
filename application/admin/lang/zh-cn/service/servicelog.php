@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'User_id'  =>  '会员id',
+    'Store_id'  =>  '所属店铺id',
+    'Adminname'  =>  '服务技师',
+    'Starttime'  =>  '开始时间',
+    'Serviceitems'  =>  '服务项目',
+    'Serviceedit'  =>  '最后编辑',
+    'Createtime'  =>  '服务时间',
+    'Endtime'  =>  '结束时间',
+    'Leftnumber'  =>  '剩余次数',
+    'Star'  =>  '星级评定',
+    'Comment'  =>  '评价内容',
+    'Level'  =>  '评价',
+    'Remarks'  =>  '备注说明',
+    'customerLog'  =>  '客勤记录',
+    'Content'  =>  '客勤内容',
+    'User.group_id'  =>  '组别ID',
+    'User.cardnum'  =>  '会员卡号',
+    'Store.storename'  =>  '所属店铺',
+    'User.name'  =>  '姓名',
+    'Admin.id'  =>  'ID',
+    'Admin.store_ids'  =>  '所属店铺',
+    'Admin.username'  =>  '登陆名',
+    'Admin.name'  =>  '姓名',
+    'User.name.cardnum'  =>  '姓名/卡号',
+];

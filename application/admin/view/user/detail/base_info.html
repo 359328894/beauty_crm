@@ -1,0 +1,98 @@
+<style>
+    .table-marggin {
+        margin-top: 15px;
+        padding: 5px;;
+    }
+
+    .td-title {
+        width: 20%
+    }
+
+    .bs-callout + .bs-callout {
+        margin-top: -5px;
+    }
+
+    .bs-callout-danger {
+        border-left-color: #ce4844;
+    }
+    .font-16{ font-size: 16px}
+    .bs-callout {
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #eee;
+        border-left-width: 5px;
+        border-radius: 3px;
+    }
+    .margin-lr8{
+        margin: 0 8px;
+    }
+</style>
+<div class="panel panel-default panel-intro">
+    <div class="bs-callout ">
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('NameCardnum')}:</label>
+            <div class="col-xs-12 col-sm-8"><span class="font-16 color-danger"><strong>{$baseInfo.cardnum} / {$baseInfo.name} </strong></span></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('mobile')}：</label>
+            <div class="col-xs-12 col-sm-8"><strong>{$baseInfo.mobile} </strong></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Group.name')}：</label>
+            <div class="col-xs-12 col-sm-8">{$baseInfo.group.name} </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Sex')}：</label>
+            <div class="col-xs-12 col-sm-8">{$baseInfo.sex?'男':'女'} </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Birthday')}：</label>
+            <div class="col-xs-12 col-sm-8">{$baseInfo.birthday} </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('MoneyScore')}：</label>
+            <div class="col-xs-12 col-sm-8"><span class="color-primary"><strong>{$baseInfo.money}元 / {$baseInfo.score}分 </strong></span></div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Storename')}：</label>
+            <div class="col-xs-12 col-sm-8">{$baseInfo.store.storename} </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Jointime')}：</label>
+            <div class="col-xs-12 col-sm-8">{$baseInfo.jointime|date="Y-m-d H:m:s",###} </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Address')}：</label>
+            <div class="col-xs-12 col-sm-8">{$baseInfo.address} </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Status')}：</label>
+            <div class="col-xs-12 col-sm-8">{eq name="baseInfo.status" value="1"}<span class="label label-info">正常</span>{else/}<span class="label label-default">封禁</span>{/eq}</div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Remarks')}：</label>
+            <div class="col-xs-12 col-sm-8">{$baseInfo.remarks} </div>
+        </div>
+    </div>
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <a href="javascript:;" id="refresh" class="btn btn-primary  btn-embossed btn-refresh"><i class="fa fa-refresh"> 刷新</i></a>
+            <a href="user/user/edit/ids/{$baseInfo.id}" id="edit" class="btn btn-success btn-embossed btn-dialog">{:__('Edit')}</a>
+            <span class="color-danger margin-lr8"> * 编辑后需要刷新该页面，才显示最新数据</span>
+        </div>
+    </div>
+</div>
+<!-- jQuery -->
+<script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+<script>
+    $(function () {
+        $("#refresh").on("click", function () {
+            window.location.reload();
+        });
+
+    });
+</script>
+

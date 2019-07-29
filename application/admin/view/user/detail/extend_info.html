@@ -1,0 +1,129 @@
+<style>
+    .table-marggin {
+        margin-top: 15px;
+        padding: 5px;;
+    }
+
+    .td-title {
+        width: 20%
+    }
+
+    .bs-callout + .bs-callout {
+        margin-top: -5px;
+    }
+
+    .bs-callout-danger {
+        border-left-color: #ce4844;
+    }
+    .font-16{
+        font-size: 16px
+    }
+    .margin-lr8{
+        margin: 0 8px;
+    }
+    .bs-callout {
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #eee;
+        border-left-width: 5px;
+        border-radius: 3px;
+    }
+.form-group{ line-height: 28px}
+</style>
+<div class="panel panel-default panel-intro">
+    <div class="bs-callout ">
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Health')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <span id="a-health">{$extendInfo.health}</span>
+                <span class="color-gray margin-lr8"  id="n-health">
+                    {if condition="!empty($extendInfo.health_lastendtime)"}
+                    {$extendInfo.health_lastendauthor} / {$extendInfo.health_lastendtime|date="Y-m-d H:m:s",###}
+                    {/if}
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Family')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <span id="a-family">{$extendInfo.family}</span>
+                <span class="color-gray margin-lr8" class="n-family">
+                    {if condition="!empty($extendInfo.family)"}
+                    {$extendInfo.family_lastendauthor} / {$extendInfo.family_lastendtime|date="Y-m-d H:m:s",###}
+                    {/if}
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Income')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                <span id="a-income">{$extendInfo.income}</span>
+                <span class="color-gray margin-lr8" id="n-income">
+                    {if condition="!empty($extendInfo.income)"}
+                    {$extendInfo.income_lastendauthor} / {$extendInfo.income_lastendtime|date="Y-m-d H:m:s",###}
+                    {/if}
+                    </span>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Ability')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                <span id="a-ability">{$extendInfo.ability}</span>
+                <span class="color-gray margin-lr8"  id="n-ability">
+                    {if condition="!empty($extendInfo.ability)"}
+                    {$extendInfo.ability_lastendauthor} / {$extendInfo.ability_lastendtime|date="Y-m-d H:m:s",###}
+                    {/if}
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Likes')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                <span id="a-likes">{$extendInfo.likes}</span>
+                <span class="color-gray margin-lr8" id="n-likes">
+                    {if condition="!empty($extendInfo.likes)"}
+                    {$extendInfo.likes_lastendauthor} / {$extendInfo.likes_lastendtime|date="Y-m-d H:m:s",###}
+                    {/if}
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Character')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                <span id="a-character">{$extendInfo.character}</span>
+                <span class="color-gray margin-lr8" id="n-character">
+                    {if condition="!empty($extendInfo.character)"}
+                    {$extendInfo.character_lastendauthor} / {$extendInfo.character_lastendtime|date="Y-m-d H:m:s",###}
+                    {/if}
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Needs')}：</label>
+            <div class="col-xs-12 col-sm-8">
+                <span id="a-needs">{$extendInfo.needs}</span>
+                <span class="color-gray margin-lr8" id="n-needs">
+                {if condition="!empty($extendInfo.needs)"}
+                {$extendInfo.needs_lastendauthor} / {$extendInfo.needs_lastendtime|date="Y-m-d H:m:s",###}
+                {/if}
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <a href="user/user_extend/edit/user_id/{$baseInfo.id}" id="edit" class="btn btn-success btn-embossed btn-dialog">{:__('Edit')}</a>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'Adminname' => '服务技师',
+    'User_id' => '会员id',
+    'Store_id' => '店铺id',
+    'Servicename' => '服务项目',
+    'Createtime' => '购买时间',
+    'Lastservicetime' => '上次服务',
+    'Remarks' => '备注说明',
+    'Totalnumber' => '总次数',
+    'Specificnumbe' => '剩余次数',
+    'Status' => '当前状态',
+    'Storelock' => '锁定技师',
+    'Admin.store_id' => '所属店铺ID',
+    'adminname' => '服务技师',
+    'Admin.name' => '姓名',
+    'Admin.avatar' => '头像',
+    'User.username' => '会员名',
+    'User.name' => '客户姓名',
+    'User.mobile' => '手机号',
+    'User.avatar' => '头像',
+    'Store.storename' => '所属店铺',
+    'Cardnum' => '会员卡号',
+    'Explain'=>'不可修改',
+    'NameCardnum' => '卡号/姓名',
+    'Identifier' => '项目编号',
+];

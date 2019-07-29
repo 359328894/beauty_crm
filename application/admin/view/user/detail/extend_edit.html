@@ -1,0 +1,170 @@
+<style>
+    .table-marggin {
+        margin-top: 15px;
+        padding: 5px;;
+    }
+
+    .td-title {
+        width: 20%
+    }
+
+    .bs-callout + .bs-callout {
+        margin-top: -5px;
+    }
+
+    .bs-callout-danger {
+        border-left-color: #ce4844;
+    }
+    .font-16{
+        font-size: 16px
+    }
+    .margin-lr8{
+        margin: 0 8px;
+    }
+    .bs-callout {
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #eee;
+        border-left-width: 5px;
+        border-radius: 3px;
+    }
+.form-group{ line-height: 28px}
+</style>
+<form id="edit_extend-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+<div class="panel panel-default panel-intro">
+    <input name="row[item]" value="{$item}" type="hidden">
+    <input name="row[ids]" value="{$row.id}" type="hidden">
+    <div class="panel-heading">
+        <p>客户拓展资料</p>
+    </div>
+    <div style="margin-top: 40px">
+        <div class="form-group row">
+            {switch name="item"}
+            {case value="1"}
+            <label class="control-label col-xs-12 col-sm-2">{:__('Health')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-health" class="c-content form-control" name="row[health]" type="text" rows="8">{$row.health}</textarea>
+            </div>
+            {/case}
+            {case value="2"}
+            <label class="control-label col-xs-12 col-sm-2">{:__('Family')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-family" class="c-content form-control" name="row[family]" type="text" rows="8">{$row.family}</textarea>
+            </div>
+            {/case}
+            {case value="3"}
+            <label class="control-label col-xs-12 col-sm-2">{:__('Income')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="income" class="c-content form-control" name="row[income]" type="text" rows="8">{$row.income}</textarea>
+            </div>
+            {/case}
+            {case value="4"}
+            <label class="control-label col-xs-12 col-sm-2">{:__('Ability')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-ability" class="c-content form-control" name="row[ability]" type="text" rows="8">{$row.ability}</textarea>
+            </div>
+            {/case}
+            {case value="5"}
+            <label class="control-label col-xs-12 col-sm-2">{:__('Likes')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-likes" class="c-content form-control" name="row[likes]" type="text" rows="8">{$row.likes}</textarea>
+            </div>
+            {/case}
+            {case value="6"}
+            <label class="control-label col-xs-12 col-sm-2">{:__('Character')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-character" class="c-content form-control" name="row[character]" type="text" rows="8">{$row.character}</textarea>
+
+                <a href="/admin/Other/character"  target="_blank" style="margin-top: 10px; display: block;">查看18种性格类型</a>
+            </div>
+            {/case}
+            {case value="7"}
+            <label class="control-label col-xs-12 col-sm-2">{:__('Needs')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-needs" class="c-content form-control" name="row[family]" type="text" rows="8">{$row.needs}</textarea>
+            </div>
+            {/case}
+            {default /}
+
+            <label class="control-label col-xs-12 col-sm-2"></label>
+            <div class="col-xs-12 col-sm-8">
+                ERROR
+            </div>
+            {/switch}
+
+        </div>
+        <div class="form-group row">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+        <div class="color-danger" style="margin-top: 10px">{:__('Notice')}:</div>
+        </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+<!--            <a href="user/detail/extendEdit/ids/{$row.id}/item/{$item}"class="btn  btn-success  btn-dialog">{:__('OK')}</a>-->
+            <button type="button" id="extendEdit" class="btn btn-success btn-embossed ">{:__('OK')}</button>
+            <button type="button" id="close" class="btn btn-default btn-embossed">{:__('Close')}</button>
+        </div>
+    </div>
+</form>
+<!-- jQuery -->
+<script src=https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdn.staticfile.org/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+<script>
+    $(function () {
+        $("#close").on("click", function () {
+            var mylay = parent.layer.getFrameIndex(window.name);
+            parent.Toastr.success('22222222222');
+            parent.$("#test").html('测试');
+
+            parent.layer.close(mylay); //关闭弹窗
+        });
+        $("#extendEdit").on("click", function () {
+
+          if($('.c-content').val()==''||$('.c-content').val()==null){
+              Layer.msg("必要数据未填写！");
+              return false;
+          }else{
+              //var index = layer.load(0, {shade: false});
+              $.ajax({
+                  type: "POST",
+                  url: 'user/detail/extendEdit',
+                  data: {
+                      "content": $('.c-content').val(),
+                      "item": {$item},
+                      "ids": {$row["id"]},
+                  },
+                  dataType: "json",
+                  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                  success: function (data) {
+                      if(data.code){
+                          var mylay = parent.layer.getFrameIndex(window.name);
+                          parent.layer.close(mylay); //关闭弹窗
+
+                          parent.Toastr.success(data.msg);
+
+                          var a_param='#a-'+data.data.param;
+                          var n_param='#n-'+data.data.param;
+                          parent.$(a_param).html(data.data.content);
+                          parent.$(n_param).html(data.data.sign);
+                      }else{
+                          Layer.msg(data.msg);
+                      }
+
+                  }
+              });
+          }
+        });
+    });
+</script>
+

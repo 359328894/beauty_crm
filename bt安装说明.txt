@@ -1,0 +1,9 @@
+﻿1.网站伪静态模式选择->thinkphp 保存至 public
+2.生成user.in 保存至pubic
+3.关闭调试模式 22qqqqqqqqqqwww
+
+客情
+
+员工记录表
+
+id user_id servicelog_id

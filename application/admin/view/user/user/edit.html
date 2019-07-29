@@ -1,0 +1,90 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+        <div class="form-group">
+
+        <label class="control-label col-xs-12 col-sm-2">{:__('Store.storename')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('row[store_id]', $storeslist, $row.store_id, ['class'=>'form-control selectpicker','data-rule'=>'required'])}
+        </div>
+    </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Group.name')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                {:build_select('row[group_id]', $grouplist, $row.group_id, ['class'=>'form-control selectpicker','data-rule'=>'required'])}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Cardnum')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-cardnum" class="form-control" name="row[cardnum]" type="text" value="{$row.cardnum}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-sex" data-rule="required" class="form-control" type="text"  name="row[name]"  value="{$row.name}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Sex')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                {:build_radios('row[sex]', ['0'=>__('Sex 0'),'1'=>__('Sex 1')], $row['sex'])}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Mobile')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-mobile" data-rule="required" class="form-control" name="row[mobile]" type="text" value="{$row.mobile}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Birthday')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-birthday" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" name="row[birthday]" type="text" value="{$row.birthday}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Money')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-money" data-rule="required" class="form-control" step="0.01" name="row[money]"
+                       type="number" value="{$row.money}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Score')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-score" data-rule="required" class="form-control" name="row[score]" type="number"
+                       value="{$row.score}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Jointime')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-jointime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[jointime]" type="text" value="{:date('Y-m-d H:i:s',$row.jointime)}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Address')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-address" class="form-control" name="row[address]" type="text" value="{$row.address}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Remarks')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <textarea id="c-remarks" class="form-control" name="row[remarks]" type="text" rows="5">{$row.remarks}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                {:build_radios('row[status]', ['1'=>__('Status 1'), '0'=>__('Status 0')], $row['status'])}
+            </div>
+        </div>
+        <div class="form-group layer-footer">
+            <label class="control-label col-xs-12 col-sm-2"></label>
+            <div class="col-xs-12 col-sm-8">
+                <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+            </div>
+        </div>
+</form>
